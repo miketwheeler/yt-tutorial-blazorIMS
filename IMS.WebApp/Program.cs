@@ -17,6 +17,7 @@ builder.Services.AddSingleton<IInventoryRepository, InventoryRepository>(); // c
 builder.Services.AddTransient<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>(); // doesn't store anywhere, created adhoc
 builder.Services.AddScoped<IViewInventoriesByNameUseCase, ViewInventoriesByNameUseCase>(); // instance of that class is scoped lifetime - created, and stored as long as there is an established SignalR connection - hybrid of the above 2
 // {{ in Blazor Server:: AddScoped and AddSingleton ARE THE SAME because of the architecture relying on the SigR comms channel }}
+builder.Services.AddTransient<IAddInventoryUseCase, AddInventoryUseCase>();
 
 
 
